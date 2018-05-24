@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>对象</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	//创建对象方式一
+    	function f1(){
+    		var obj = new Object();
+    		obj.name="张三";
+    		obj.age=28;
+    		obj.gender="男";
+    		obj.play=function(){
+    			alert(this.name+"正在学javaScript,他现在"+this.age+"岁,他是一个"+this.gender+"生");
+    		};
+//     		alert(obj.name);
+// 			obj.play();
+			alert(typeof obj);
+    	}
+    	
+    	//创建对象方式二
+    	function f2(){
+    		var p = new Person("李四",25);
+//     		alert(p.name);
+//     		alert(typeof p);
+    		p.play();
+    	}
+    	
+    	function Person(name,age){
+    		this.name=name;
+    		this.age=age;
+    		this.play=function(){
+    			alert(this.name+"正在做梦");
+    		}
+    	}
+    	
+    	//创建对象方式三
+    	function f3(){
+    		var p = {"name":"王五","age":29,"gender":"女","play":function(){
+    			alert(this.name+"正在玩");
+    		}};
+    		alert(typeof p);
+    		alert(p.name);
+    		alert(p.age);
+    		alert(p.gender);
+    		p.play();
+    	}
+    	
+    	
+    	//创建对象方式四
+    	function f4(){
+    		var p = "{'name':'德玛西亚','gender':'男','age':33,'play':function(){alert('吃饭睡觉打豆豆');}}";
+    		alert(typeof p);
+    		var obj = eval("("+p+")");
+    		alert(typeof obj);
+    		alert(obj.name);
+    		obj.play();
+    	}
+    	
+    </script>
+  </head>
+  
+  <body>
+    <a href="javaScript:;" onclick="f1()">测试1</a><br/>
+    <a href="javaScript:;" onclick="f2()">测试2</a><br/>
+    <a href="javaScript:;" onclick="f3()">测试3</a><br/>
+    <a href="javaScript:;" onclick="f4()">测试4</a><br/>
+  </body>
+</html>

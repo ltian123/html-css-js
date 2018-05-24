@@ -1,0 +1,165 @@
+js框架:Jquery
+	实际上就是一个js文件,将用户需要的功能封装成了一个js文件
+	.min.js:使用版,将所有的空格换行去掉了,压缩了文件的大小,不占空间
+	.js:完整版,这个版本主要是给用户阅读的,而不是用来使用的
+	
+	核心
+		jQuery()
+		window.jQuery()
+		window.$()
+		$();
+	
+	jQuery对象
+		由jQuery函数产生的对象
+		
+	DOM对象
+		HTML中的对象
+		
+	DOM对象与jQuery对象的转换
+		DOM对象--->jQuery对象:$(DOM对象)
+		jQuery对象--->DOM对象:jQuery对象[0]或者jQuery对象.get(0)
+		
+		
+	jQuery选择器
+		id选择器
+			$("#a"),找到id为a的节点
+			
+		element选择器
+			$("标签名")
+			
+		class选择器
+			console.log($(".a1"));
+			
+		*:找到整个html中的所有的元素
+			console.log($("*"));
+			
+		选择器1,选择器2:找到选择器1和选择器2
+			console.log($("#p1,.a1"));
+			
+		选择器1 选择器2:找到选择器1下面的所有的子孙后代元素,即所有的子标签,包括子标签中的子标签
+			console.log($("div p"));
+			console.log($("form input"));
+			
+		选择器1 > 选择器2:找到选择器1下面的选择器2,只匹配子元素,不关系子元素的后代
+			console.log($("form > input"));
+			
+		选择器1 + 选择器2:找到紧跟在选择器1后面的选择器2,若选择器1后面是选择器2,则找到,若不是,则跳过该选择器1,找到下一个匹配的元素
+			console.log($("label + input"));
+			
+		选择器1 ~ 选择器2:找到所有在选择器1后面匹配选择器2的所有元素,只找同一层的元素
+			console.log($("label ~ input"));
+			
+		选择器:first	找到符合选择器的元素中的第一个元素
+			console.log($("p:first"));
+		选择器:last	找到符合选择器的元素中的最后一个元素			
+			console.log($("p:last"));
+			
+	
+	
+	css处理
+		css(name,value)
+			改变css中的name属性,将name的值改成 value
+			
+		css(name)
+			获取css中name属性的值
+		
+		addClass
+		
+		removeClass
+		
+		
+			show()
+				显示隐藏的元素
+			
+			hide()
+				隐藏显示的元素
+			
+			效果:
+				详见API文档
+				
+	属性	文本	html 值
+		属性:attr()
+			$("#im").attr("src")
+				获取id为im的节点的src属性所对应的值
+			$("#im").attr("src","...")
+				改变/赋予id为im的节点的src属性值
+				
+		文本:text()
+			text("<h1>Hello World</h1>")
+				赋予文本值,没有html标签效果,对于标签只是当成一个普通的字符串
+			text()
+				取出对应节点的文本值
+		
+		html:html()
+			与text类似,只是html识别标签
+		
+		值:val()	
+			$().val()
+				取值
+			$().val("...")
+				赋值
+		
+	
+	文档的处理
+		a和b都是jQuery对象
+		
+		内部插入
+			a.append(b)
+				b插入到a的末尾
+			a.appendTo(b)
+				将a插入到b的末尾
+	
+		外部插入
+			before
+				a.before(b)
+					将b插入到a之前
+					
+			insertBefore
+				a.insertBefore(b)
+					将a插入到b之前
+			
+			
+			after
+				a.after(b)
+					将b插入到a之后
+			insertAfter
+				a.insertAfter(b)
+					将a插入到b之后
+			
+		克隆
+			clone()	
+				只复制了组件,但是没有复制组件中的事件
+				
+			clone(true)
+				不仅仅复制组件内容,包括事件一起复制
+				
+				
+		删除
+			remove
+				删除整个标签,连标签一起删除
+				
+			empty
+				清空标签内的元素,标签还在,内部元素清空		
+		
+		遍历
+			each
+			
+		
+		
+		绑定数据
+			jQuery对象.data(key):取值
+			jQuery对象.date(key,value):赋值
+			removeData(key):移除数据
+		
+		序列化
+			serialize
+				$("#f").serialize():获取表单中所有带有name属性的节点输入的值
+				
+		jQuery版本区别
+			1.4:attr
+			1.9:prop
+		
+		
+		
+			
+	

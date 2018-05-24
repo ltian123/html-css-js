@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日期联动菜单</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function loadDate(){
+    		//获取年份的下拉列节点
+    		//加载年份下拉列中的数据,前五年到后五年
+    		var year = document.getElementById("year");
+    		//获取当前年份
+    		var currYear = new Date().getFullYear();
+    		//遍历添加数据进入下拉列
+    		for(var i = currYear - 5; i <= currYear + 5; i++){
+    			//没遍历一次创建一个Option对象
+    			var yearOption = new Option(i,i);
+    			//向当前下拉列中添加一个新的Option对象,在原有的数组中,往最后扩张1个长度
+    			//year.options[year.length-1+1]=yearOption;
+    			year.options[year.length]=yearOption;
+    		}
+    		
+    		//加载月份的数据,1-12月
+    		var month = document.getElementById("month");
+    		for(var i = 1; i <= 12; i++){
+    			var monthOption = new Option(i,i);
+    			month.options[month.length]=monthOption;
+    		}
+    		
+    	}
+    	
+    	function loadDay(){
+    		var year = document.getElementById("year");
+    		var month = document.getElementById("month");
+    		var dayChild = document.getElementById("day");
+    		//获取下拉列中所选项的option标签中的value属性值
+    		var selectedYear = year.value;
+//     		alert(selectedYear);
+			var selectedMonth = month.value;
+			if(selectedYear == -1 || selectedMonth == -1){
+				return;
+			}
+			var day = getDay(selectedYear,selectedMonth);
+// 			alert(day);
+			dayChild.length = 1;
+			for(var i = 1; i <= day; i++){
+				var dayOption = new Option(i,i);
+				dayChild.options[dayChild.length] = dayOption;
+			}
+    	}
+    	
+    	function getDay(year,month){
+    		var day;
+    		
+    		//第一种方法
+//     		if(month==1 ||month==3 || month==5 ||month==7 || month==8 || month==10 ||month==12){
+//     			day = 31;
+//     		}else if(month == 2){
+//     			if((year % 4 == 0 && year % 100 !=0) || (year % 400 ==0)){
+//     				day = 29;
+//     			}else{
+//     				day = 28;
+//     			}
+//     		}else{
+//     			day = 30;
+//     		}
+//     		return day;
+
+			//方法二:
+			//思路:想要知道一个月有多少天,只要设置当前日期是改月的最后一天,
+			//通过getDate()方法获取的值就表示当月一共有多少天
+			//表示2016年3月1号
+// 			var date = new Date(2016,0,1)
+			
+			//表示2016年3月1号的前一天,也就是表示2月的最后一天
+// 			var date = new Date(2016,2,0);
+			
+			//本月的最后一天
+// 			var date = new Date(year,month-1+1,0);
+			
+			//获取下个月的第一天
+// 			var date = new Date(year,month,1)
+			
+// 			var date = new Date(2016,4(0-11),1);
+// 										(1-12)
+			
+			//本月的第一天
+// 			var date = new Date(year,month-1,1);
+			
+			//获取下一个月的第一天
+// 			new Date(year,month-1+1,1);
+			
+			//本月的最后一天=下个月的第一天-1天			
+// 			new Date(year,month-1+1,1-1);
+			
+			//本月最后一天
+			var date = new Date(year,month,0);
+			
+// 			alert(year+"***"+month+"***");
+// 			alert(date);
+// 			alert(date.getFullYear()+"-"+date.getMonth()+"-"+date.getDate());
+			
+			return date.getDate();
+				
+    	}
+    </script>
+  </head>
+  <body onload="loadDate()">
+    <select id="year" onchange="loadDay()">
+    	<!-- 年份是当前年份的前五年到后五年 -->
+    	<option value="-1">--年--</option>
+    </select>
+    <select id="month" onchange="loadDay()">
+    	<!-- 通过js遍历1-12月 -->
+    	<option value="-1">--月--</option>
+    </select>
+    <select id="day">
+    	<!-- 通过js遍历日期,要考虑闰年,值可能是28,29,30,31 -->
+    	<option>--日--</option>
+    </select>
+    <br/>
+  </body>
+</html>

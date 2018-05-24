@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>计算器</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	table{
+    		background-color: pink;
+    		width: 25%;
+    		text-align: center;
+    	}
+    	.ok{
+    		color: green;
+    		font-size: 12px;
+    	}
+    	.error{
+    		color: red;
+    		font-size: 12px;
+    	}
+    	
+    </style>
+    
+    <script type="text/javascript">
+    	function result(id){
+    		var num1 = document.getElementById("num1").value;
+    		var num2 = document.getElementById("num2").value;
+    		var result = document.getElementById("resultSpan");
+    		var operator = document.getElementById(id).value.trim();
+//     		alert(operator);
+    		//数字的情况
+    		//第一种:整数	\d+
+    		//第二种:小数	\d+[\.]\d+
+    		var reg1=/^[1-9]{1}\d*[\.]\d+$/;
+    		var reg2=/^[0][\.]\d+$/;
+    		var reg3=/^\d*$/
+//     		var reg = /^([1-9]{1}\d*[\.]\d+) | ([0][\.]\d+) | (\d*)$/;
+    		
+     		
+    		if(reg1.test(num1) || reg2.test(num1) || reg3.test(num1)){
+    			if(reg1.test(num2) || reg2.test(num2) || reg3.test(num2)){
+    				num1 = parseFloat(num1);
+    				num2 = parseFloat(num2);
+    				if(operator == "+"){
+    					result.innerHTML=(num1+num2);
+    				}
+    				if(operator == "-"){
+    					result.innerHTML=(num1-num2);
+    				}
+    				if(operator == "×"){
+    					result.innerHTML=(num1*num2);
+    				}
+    				if(operator == "÷"){
+    					result.innerHTML=(num1/num2);
+    				}
+    				
+    				result.className="ok";
+    				return;
+    			}
+    			return;
+    		}
+   			result.innerHTML="您输入的数据格式错误";
+   			result.className="error";
+    		
+    		
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <table border="1" align="center">
+   		<tr>
+   			<td colspan="2">计算器</td>
+   		</tr>
+   		<tr>
+   			<td>第一个数:</td>
+   			<td>
+   				<input type="text" id="num1"/>
+   			</td>
+   		</tr>
+   		<tr>
+   			<td>第二个数:</td>
+   			<td>
+   				<input type="text" id="num2">
+   			</td>
+   		</tr>
+   		<tr>
+   			<td colspan="2">
+   				<input type="button" id="add" value="+" onclick="result('add')"/>
+   				<input type="button" id="reduce" value="-" onclick="result('reduce')"/>
+   				<input type="button" id="ride" value="×" onclick="result('ride')"/>
+   				<input type="button" id="except" value="÷" onclick="result('except')"/>
+   			</td>
+   		</tr>
+   		<tr>
+   			<td>计算结果:</td>
+   			<td>
+<!-- 				<input type="text" id="result" > -->
+				<span id="resultSpan"></span>
+   			</td>
+   		</tr>
+   	</table>
+  </body>
+</html>

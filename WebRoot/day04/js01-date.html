@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js日期</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function f1(){
+    		var date = new Date();
+    		date.setMonth(1);
+//     		alert("今年是:"+date.getFullYear());
+    		alert("本月是:"+(date.getMonth()+1));
+//     		alert("今天是:"+date.getDate()+"号");
+//     		alert("今天星期"+date.getDay());
+			alert(date.getTime());
+    		alert("现在时间为:"+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+//     		alert(date);
+    	}
+    	
+    	function fn(a){
+    		var s = "0"+a;
+//     		alert(s);
+			s = s.substring(s.length-2);
+			return s;
+    	}
+    	
+    	function f3(s){
+//     		var s = "1970/01/01 08:01:00";
+//     		var s = "2016/10/01 08:01:00";
+    		var d = Date.parse(s);
+//     		alert(d);
+			
+			var date = new Date();
+    		date.setTime(d);
+//     		alert(date);
+    		alert(date.getFullYear()+"-"+fn(date.getMonth()+1)+"-"+fn(date.getDate())+" "+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+    	}
+    	
+    </script>
+  </head>
+  
+  <body>
+    <input  type="button" value="测试1" onclick="f1()"><br/>
+    <input  type="button" value="测试2" onclick="fn(4)"><br/>
+    <input  type="button" value="测试3" onclick="f3()"><br/>
+    
+  </body>
+</html>

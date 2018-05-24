@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>多选下拉列</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function move(fromId,toId){
+    		var fromObj = document.getElementById(fromId);
+    		var toObj = document.getElementById(toId);
+    		var ops = fromObj.options;
+// 			for(var i = 0; i < ops.length;i++){
+// 				var curr = ops[i];
+// 				if(curr.selected){
+// 					var text = curr.text;
+// 					var value = curr.value;
+// 					var op = new Option(text,value);
+// 					toObj.options[toObj.options.length] = op;
+// 					fromObj[i] = null;
+// 				}
+// 			}    
+
+			for(var i = ops.length-1; i >=0;i--){
+				//取出当前遍历的Option对象
+				var curr = ops[i];
+				//判断该选项是否被选中
+				if(curr.selected){
+					//取出选中的选项的文本值和服务器值
+					var text = curr.text;
+					var value = curr.value;
+					//根据取出的文本值和服务器值,创建一个Option对象
+					var op = new Option(text,value);
+					//将新的Option对象添加到第二个下拉列中
+					toObj.options[toObj.options.length] = op;
+					
+					//将原来的下拉列中的数据移除
+					fromObj[i] = null;
+				}
+				
+			}
+    	}
+    	
+    	function moveAll(fromId,toId){
+    		var fromObj = document.getElementById(fromId);
+    		var toObj = document.getElementById(toId);
+    		var ops = fromObj.options;
+    		for(var i = ops.length-1;i>=0;i--){
+    			var curr = ops[i];
+    			var text = curr.text;
+    			var value = curr.value;
+    			var op = new Option(text,value);
+    			toObj.options[toObj.length]=op;
+    			fromObj[i]=null;
+    		}
+    	}
+    </script>
+  </head>
+	  
+  <body>
+  
+  	<form action="">
+  		<table style="background-color: pink;">
+  			<tr>
+  				<td>
+  					 <select id="s1" multiple="multiple" style="width: 150px;height:140px;">
+				    	<option>德玛西亚</option>
+				    	<option>赵信</option>
+				    	<option>易大师</option>
+				    	<option>乐芙兰</option>
+				    </select>
+  				</td>
+  				<td>
+  					<input type="button" value="-->&nbsp;&nbsp;" onclick="move('s1','s2')"><br/>
+  					<input type="button" value="-->>" onclick="moveAll('s1','s2')"><br/>
+  					<input type="button" value="<--&nbsp;&nbsp;" onclick="move('s2','s1')"><br/>
+  					<input type="button" value="<<--" onclick="moveAll('s2','s1')"><br/>
+  				</td>
+  				<td>
+  					 <select id="s2" multiple="multiple" style="width: 150px;height:140px;">
+    				 </select>
+  				</td>
+  				
+  			</tr>
+  		</table>
+  	
+  	</form>
+   
+    
+    
+   
+  </body>
+</html>

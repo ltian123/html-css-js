@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello jQuery</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+	  	//将整个dom(html)转换成jQuery对象
+	    //$(document)
+	    
+	    //当页面加载完成之后需要执行的函数
+	    $(document).ready(function(){
+	    	//当页面加载之后执行此处的代码
+// 	    	alert("Hello jQuery");
+// 	    	alert($("#h"));
+// 	    	alert($("#h").innerHTML);
+// 	    	alert($("#h")[0].innerHTML);
+// 	    	alert($("#h").html());
+// 	    	alert($("#h").text());
+	    });
+	    
+	    
+    </script>
+  </head>
+  <body>
+    <h1 id="h">Hello jQuery</h1>
+  </body>
+</html>

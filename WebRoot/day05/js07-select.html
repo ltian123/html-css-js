@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>下拉列</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function f1(){
+    		var s = document.getElementById("s");
+    		var ops = s.options;
+//     		for(var i = 0; i < ops.length; i++){
+//     			alert("纯文本值:"+ops[i].text);
+//     			alert("服务器值:"+ops[i].value);
+//     		}
+			alert(s.selectedIndex);
+			alert(ops[s.selectedIndex].text);
+			alert(ops[s.selectedIndex].value);
+    	}
+    	
+    	function add(){
+    		//方式一
+    		//获取下拉列节点
+    		var s = document.getElementById("s");
+    		
+    		var ops = s.options;
+    		//创建option标签
+// 			var op = document.createElement("option"); 
+    		
+    		//创建文本值
+//     		op.innerHTML="ddd";
+//     		op.value="d";
+//     		s.appendChild(op);
+    		
+    		
+    		//方式二
+//     		alert(s.innerHTML);	
+//     		s.innerHTML=s.innerHTML+"<option value='d'>ddd</option>";
+    		
+    		//方式三
+    		var op = new Option("ddd","d");
+//     		alert(ops[s.length-1].text);
+			//向现有的下拉列选中末尾添加一个option对象
+    		ops[s.length]=op;
+    	}
+    	
+    	function removeOne(){
+    		var s = document.getElementById("s");
+    		var ops = s.options;
+    		ops[0]=null;
+    	}
+    	
+    	function removeAll(){
+    		alert(document.getElementById("s").options.length);
+    		alert(document.getElementById("s").length);
+//     		document.getElementById("s").options.length=0;
+//     		var s = document.getElementById("s");
+//     		var ops = s.options;
+//     		for(var i = 0; i< ops.length; i++){
+//     			ops[i]=null;
+//     		}
+// 			for(var i = ops.length-1; i >=0; i--){
+// 				ops[i]=null;
+// 			}
+			
+    	}
+    	function remove(){
+    		alert(1);
+    	}
+    	
+    	function f2(index){
+    		alert(index);
+    	}
+    </script>
+  </head>
+  <body>
+    <select id="s" onchange="f2(this.selectedIndex)">
+    	<option value="a">aaa</option>
+    	<option value="b">bbb</option>
+    	<option value="c">ccc</option>
+    </select><br/>
+    <a href="javaScript:;" onclick="add()">添加</a>
+    <a href="javaScript:;" onclick="removeOne()">删除</a>
+    <a href="javaScript:;" onclick="removeAll()">清空</a>
+    <a href="javaScript:;" onclick="remove()">清空1</a>
+  </body>
+</html>

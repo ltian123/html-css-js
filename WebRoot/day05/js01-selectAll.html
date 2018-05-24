@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>全选</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function selectAll(){
+    		var all = document.getElementById("all");
+        	var emps = document.getElementsByName("emp");
+//         	alert(all.checked);
+//         	alert(all+"********"+emps);
+//         	for(var i = 0; i < emps.length; i++){
+//         		alert(emps[i].checked);
+//         	}
+// 			if(all.checked==true){
+// 				for(var i = 0; i < emps.length; i++){
+// 	        		emps[i].checked=true;
+// 	        	}
+// 			}else{
+// 				for(var i = 0; i < emps.length; i++){
+// 	        		emps[i].checked=false;
+// 	        	}
+// 			}
+        	
+        	
+        	for(var i = 0; i < emps.length; i++){
+        		if(all.checked==true){
+        			emps[i].checked=true;
+        		}else{
+        			emps[i].checked=false;
+        		}
+        		
+        	}
+        	
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <table border="1">
+    	<tr>
+    		<td><input type="checkbox" id="all" onclick="selectAll()"/></td>
+    		<th>姓名</th>
+    		<th>工资</th>
+    		<th>操作</th>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox" name="emp"/></td>
+    		<td>张三</td>
+    		<td>5000.0</td>
+    		<td>
+    			<a href="javaScript:;">删除</a>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox" name="emp"/></td>
+    		<td>李四</td>
+    		<td>6000.0</td>
+    		<td>
+    			<a href="javaScript:;">删除</a>
+    		</td>
+    	</tr>
+    	<tr>
+    		<td><input type="checkbox" name="emp"/></td>
+    		<td>王五</td>
+    		<td>8000.0</td>
+    		<td>
+    			<a href="javaScript:;">删除</a>
+    		</td>
+    	</tr>
+    </table>
+  </body>
+</html>

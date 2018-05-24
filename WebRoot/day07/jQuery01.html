@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello jQuery</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+	  	//将整个dom(html)转换成jQuery对象
+	    //$(document)
+	    
+	    //当页面加载完成之后需要执行的函数
+// 	    $(document).ready(function(){
+	    	//当页面加载之后执行此处的代码
+// 	    	alert("Hello jQuery");
+// 	    	alert($("#h"));
+// 	    	alert($("#h").innerHTML);//innerHTML是DOM中的方法
+// 	    	alert($("#h")[0].innerHTML);
+// 	    	alert($("#h").html());
+// 	    	alert($("#h").text());
+			//当用户点击id=h的节点的时候,执行下面的操作
+// 			$("#h").click(function(){
+// 				alert("click");
+// 			});
+			
+// 			function aaa()
+// 			onclick=aaa()
+			
+			
+// 			document.getElementById("a").onclick=function(){}
+// 			$("#a").click(function(){
+// 				alert("我正在点击超链接");
+// 			});
+			
+// 			$("#s").change(function(){
+// 				alert("我正在改变下拉列的内容");
+// 			});
+			
+// 	    });
+	  	
+	    
+// 	  	$(document).ready(function(){
+	  		//click
+	  		//change
+	  		//blur
+	  		//keyUp
+	  		//....
+// 	  	});
+	  	
+	  	//相当于页面加载之后执行函数,与上面的方法相同
+// 	  	jQuery(function(){
+// 	  		....
+// 	  	});
+	  	
+	  	//jQuery简写方式
+	  	$(function(){
+	  		alert($("#h").html());
+	  		$("#a").click(function(){
+	  			alert("正在点击...");
+	  		});
+	  	});
+	    
+    </script>
+  </head>
+  <body>
+    <h1 id="h">Hello jQuery</h1>
+    
+    <a id="a" href="javaScript:;">click</a><br/>
+    
+    <select id="s">
+    	<option>aaa</option>
+    	<option>bbb</option>
+    </select>
+  </body>
+</html>

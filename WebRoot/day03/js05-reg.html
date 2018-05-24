@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>正则表达式</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function f1(){
+    		var s = prompt("请输入一个用户名:");
+//     		var reg = /^[a-zA-Z0-9_]{4,16}$/;
+// 			var reg = /^[0-9]?$/
+			var reg = /^\W{4,16}$/;
+    		if(reg.test(s)){
+    			alert("校验成功");
+    		}else{
+    			alert("校验失败");
+    		}
+    	}
+    	
+    	function f2(){
+    		var s = prompt("请输入一个手机号码:");
+    		var reg = /^[1][3578]\d{9}$/;
+    		if(reg.test(s)){
+    			alert("这是一个手机号码");
+    		}else{
+    			alert("手机号码错误");
+    		}
+    		
+    	}
+    	
+    	function f3(){
+    		var s = prompt("请输入一个电子邮箱:");
+    		var reg = /^\w+[@][a-zA-Z0-9]+(\.com)(\.cn)?$/;
+    		if(reg.test(s)){
+    			alert("这是一个电子邮箱");
+    		}else{
+    			alert("电子邮箱错误");
+    		}
+    			
+    	}
+    	function f4(){
+    		var s = prompt("请输入一个身份证:");
+    		var reg = /^(\d{14}(\d{3})?[0-9X])$/;
+    		if(reg.test(s)){
+    			alert("这是一个身份证号码");
+    		}else{
+    			alert("身份证号码错误");
+    		}
+    		
+    	}
+    	function f5(){
+    		var s = prompt("请输入一个中文字符:");
+    		var reg = /^[\u4e00-\u9fa5]+$/;
+    		if(reg.test(s)){
+    			alert("这是一个中文");
+    		}else{
+    			alert("这不是中文");
+    		}
+    	}
+    </script>
+  </head>
+  <body>
+    <input type="button" value="测试1" onclick="f1()"/><br/>
+    <!-- 判断是否是手机号码,要求手机号码为11位,且以13,15,17,18开头 -->
+    <input type="button" value="测试手机号" onclick="f2()"/><br/>
+    <!-- 判断邮箱,要求以英文字母、数字、下划线开头,中间有一个@符号,@后跟英文字母或者数字,后面以.com或者.com.cn结尾 -->
+    <input type="button" value="测试电子邮箱" onclick="f3()"/><br/>
+    <!-- 判断身份证,要求身份证15位或者18位,且前面都是数字,最后一位可以是数字或者是X -->
+    <input type="button" value="测试身份证" onclick="f4()"/><br/>
+    <!-- 匹配中文字符 -->
+    <input type="button" value="测试中文" onclick="f5()"/><br/>
+    
+  </body>
+</html>

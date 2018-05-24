@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>addClass</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+    	.t{
+    		width:300px;
+    		height:200px;
+    		background-color: #ffee88;
+    	}
+    	div{
+    		width:200px;
+    		height:100px;
+    		background-color: red;
+    	}
+    </style>
+    <script type="text/javascript">
+    	$(function(){
+    		$("div").click(function(){
+    			$("div").addClass("t");
+    		});
+    	});
+    </script>
+  </head>
+  <body>
+  	<div id="d"></div>
+  </body>
+</html>

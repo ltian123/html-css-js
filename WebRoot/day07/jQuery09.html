@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>克隆</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		var i = 1;
+    		$("#more").click(function(){
+    			var d = $("#d").clone(true);
+    			
+//     			d.val("");
+// 				$("div input:last").val("");
+    			
+    			d.attr("id","d"+i);
+    			
+    			//插入到上传更多的按钮上方
+    			$(this).before(d);
+    			
+//     			$("#d1 input")
+    			console.log($("#d"+i+" input"));
+    			
+    			$("#d"+i+" input").val("");
+    			i++;
+    		});
+    		
+    		$("div a[name='deleteFile']").click(function(){
+//     			alert("正在删除...");
+//     			alert($(this).parent().attr("id"));
+				
+				if($(this).parent().attr("id")=="d"){
+					alert("不能删除第一个");
+					return;
+				}
+
+    			$(this).parent().remove();
+    		});
+    		
+    		$("#showName").click(function(){
+//     			alert($("div input[type='file']"));
+//     			alert($("div input[type='file']").val());
+				//对所有的文件进行遍历
+    			$("div input[type='file']").each(function(){
+    				alert($(this).val());
+    			});
+    		});
+    	});
+    </script>
+  </head>
+  <body>
+    <div id="d">
+    	<input type="file" />
+<!--     	<input type="text" value="1" /> -->
+    	<a href="javaScript:;" name="deleteFile">删除</a>
+    </div>
+    <input type="button" value="上传更多" id="more"/>
+    <input type="button" value="显示文件名" id="showName"/>
+    
+  </body>
+</html>

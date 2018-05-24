@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>css处理</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+    	div{
+    		background-color: gray;
+/*     		width: 300px; */
+/*     		height: 200px; */
+    	}
+    </style>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#bigger").click(function(){
+//     			alert($("div").css("font-size"));
+				var fontSize = $("div").css("font-size");
+				$("div").css("font-size",parseInt(fontSize)+5+"px");
+    		});
+    		$("#small").click(function(){
+    			var fontSize = $("div").css("font-size");
+    			$("div").css("font-size",parseInt(fontSize)-5+"px");
+    		});
+    		
+    		$("#hide").click(function(){
+//     			$("div").hide();
+//     			$("div").fadeOut("slow");
+//     			$("div").fadeOut(3000);
+				$("div").slideUp(3000);
+    		});
+    		
+    		$("#show").click(function(){
+//     			$("div").show();
+//     			$("div").fadeIn("slow");
+//     			$("div").fadeIn(3000);
+    			$("div").slideDown(3000);
+    		});
+    	});
+    </script>
+  </head>
+  <body>
+  	<div>
+  		<p>这是一个demo</p>
+	  	<p>这是一个demo</p>
+	  	<p>这是一个demo</p>
+	  	<p>这是一个demo</p>
+  	</div>
+  	
+  	<input type="button" id="bigger" value="放大">
+  	<input type="button" id="small" value="缩小">
+  	<input type="button" id="hide" value="隐藏">
+  	<input type="button" id="show" value="显示">
+  </body>
+</html>

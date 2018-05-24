@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>个人所得税</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function result(){
+    		var income = 0;
+    		var salary = parseInt(document.getElementById("salary").value);
+    		var tax = parseInt(document.getElementById("tax").value);
+//     		alert(salary+"---------"+tax);
+//     		alert(typeof tax);
+    		if(salary > tax){
+	    		income = (salary - tax) * 0.1;
+    		}
+//     		alert(income);
+    		var incomeTax = salary - income;
+//     		alert(incomeTax);
+    		var result = document.getElementById("incomeTax");
+    		result.value=incomeTax;
+// 			result.innerHTML=incomeTax;
+    	}
+    </script>
+  </head>
+  
+  <body>
+   	<table border="1">
+   		<tr>
+   			<td colspan="2">个人所得税计算器</td>
+   		</tr>
+   		<tr>
+   			<td>月收入:</td>
+   			<td>
+   				<input type="text" id="salary"/>
+   			</td>
+   		</tr>
+   		<tr>
+   			<td>所得税起征额:</td>
+   			<td>
+   				<input type="text" id="tax">
+   			</td>
+   		</tr>
+   		<tr>
+   			<td>税后收入:</td>
+   			<td>
+				<input type="text" id="incomeTax" >
+<!-- 				<span id="incomeTax"></span> -->
+   			</td>
+   		</tr>
+   		<tr>
+   			<td colspan="2">
+   				<input type="button" value="计算" onclick="result()">
+   			</td>
+   		</tr>
+   	</table>
+  </body>
+</html>

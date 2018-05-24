@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js02-select.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function move(fromId,toId){
+    		var fromObj = document.getElementById(fromId);
+    		var toObj = document.getElementById(toId);
+    		var ops = fromObj.options;
+    		for(var i = 0; i < ops.length; i++){
+    			var curr = ops[i];
+    			if(curr.selected){
+    				curr.style.color="gray";
+    				toObj.options[i].style.color="#000000";
+    			}
+    		}
+    	}
+    	
+    	function moveAll(fromId,toId){
+    		var fromObj = document.getElementById(fromId);
+    		var toObj = document.getElementById(toId);
+    		var ops = fromObj.options;
+    		for(var i = 0; i < ops.length; i++){
+    			var curr = ops[i];
+    			curr.style.color="gray";
+    			toObj.options[i].style.color="#000000";
+    		}
+    	}
+    
+    </script>
+  </head>
+  
+  <body>
+    <form action="">
+    	<table style="background-color: pink;">
+    		<tr>
+    			<td>
+    				<select id="s1" multiple="multiple" style="width: 150px;height: 140px;">
+    					<option style="color: #000000;">aaa</option>
+    					<option style="color: #000000;">bbb</option>
+    					<option style="color: #000000;">ccc</option>
+    					<option style="color: #000000;">ddd</option>
+    				</select>
+    			</td>
+    			<td>
+    				<input type="button" value="&nbsp;-->&nbsp;" onclick="move('s1','s2')"><br/>
+    				<input type="button" value="-->>" onclick="moveAll('s1','s2')"><br/>
+    				<input type="button" value="&nbsp;<--&nbsp;" onclick="move('s2','s1')"><br/>
+    				<input type="button" value="<<--" onclick="moveAll('s2','s1')"><br/>
+    			</td>
+				<td>
+					<select id="s2" multiple="multiple" style="width: 150px;height: 140px;">
+    					<option style="color: gray;">aaa</option>
+    					<option style="color: gray;">bbb</option>
+    					<option style="color: gray;">ccc</option>
+    					<option style="color: gray;">ddd</option>
+    				</select>
+				</td>    			
+    		</tr>
+    	</table>
+    </form>
+    
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>frameSet01.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  
+  <frameSet cols="15%,70%,*">
+  	<frame src="menus.html"  scrolling="no">
+  	<frameSet rows="25%,*">
+  		<frame src="welcome.html" scrolling="no">
+  		<frame src="../html/form01.html" >
+  	</frameSet>
+  	<frame src="menus.html"  >
+  </frameSet>
+</html>

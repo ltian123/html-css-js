@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>全选</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+<!--     <script type="text/javascript" src="../js/jquery-1.4.1.min.js"></script> -->
+    <script type="text/javascript">
+    	$(function(){
+    		$("#c").click(function(){
+    			var allCheck = $("input[type='checkbox']");
+//     			alert($("#c").attr("checked"));
+// 				$(allCheck).attr("checked",$("#c").attr("checked"));
+				$(allCheck).prop("checked",$("#c").prop("checked"));
+    		});
+    	});
+    </script>
+  </head>
+  <body>
+  	<table border="1">
+  		<tr>
+  			<th><input type="checkbox" id="c"></th>
+  			<th>姓名</th>
+  			<th>工资</th>
+  			<th>操作</th>
+  		</tr>
+  		<tr>
+  			<td><input type="checkbox"></td>
+  			<td>张三</td>
+  			<td>5000</td>
+  			<td>
+  				<a href="javaScript:;">删除</a>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td><input type="checkbox"></td>
+  			<td>张三</td>
+  			<td>5000</td>
+  			<td>
+  				<a href="javaScript:;">删除</a>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td><input type="checkbox"></td>
+  			<td>张三</td>
+  			<td>5000</td>
+  			<td>
+  				<a href="javaScript:;">删除</a>
+  			</td>
+  		</tr>
+  		<tr>
+  			<td><input type="checkbox"></td>
+  			<td>张三</td>
+  			<td>5000</td>
+  			<td>
+  				<a href="javaScript:;">删除</a>
+  			</td>
+  		</tr>
+  	</table>
+  </body>
+</html>

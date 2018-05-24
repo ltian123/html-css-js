@@ -1,0 +1,35 @@
+js框架:Jquery
+	实际上就是一个js文件,将用户需要的功能封装成了一个js文件
+	.min.js:使用版,将所有的空格换行去掉了,压缩了文件的大小,不占空间
+	.js:完整版,这个版本主要是给用户阅读的,而不是用来使用的
+	
+	核心
+		jQuery()
+		window.jQuery()
+		window.$()
+		$();
+	
+	jQuery对象
+		由jQuery函数产生的对象
+		
+	DOM对象
+		HTML中的对象
+		
+	DOM对象与jQuery对象的转换
+		DOM对象--->jQuery对象:$(DOM对象)
+		jQuery对象--->DOM对象:jQuery对象[0]或者jQuery对象.get(0)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	

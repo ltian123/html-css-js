@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单校验</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <style type="text/css">
+    	.ok{
+    		color: green;
+    	}
+    	.error{
+    		color:red;
+    	}
+    	span{
+    		font-size: 12px;
+    	}
+    </style>
+    <script type="text/javascript">
+    	function checkName(){
+    		var username = document.getElementById("username").value;
+    		var nameSpan = document.getElementById("nameSpan");
+    		//要求用户由英文字母、数字、下划线组成,长度为4-16个字符
+    		var reg = /^\w{4,16}$/;
+//     		alert(username.length);
+			if(username.length==0){
+// 				alert("用户名不能为空");
+				nameSpan.innerHTML="用户名不能为空";
+				nameSpan.className="error";
+				return false;
+			}
+			if(reg.test(username)){
+				nameSpan.innerHTML="用户名可以使用";
+				nameSpan.className="ok";
+				return true;
+			}else{
+				nameSpan.innerHTML="用户名格式不正确";
+				nameSpan.className="error";
+				return false;
+			}
+			
+    	}
+    	
+    	function checkPassword(){
+    		var password = document.getElementById("password").value;
+    		var passwordSpan = document.getElementById("passwordSpan");
+    		if(password.length==0){
+    			passwordSpan.innerHTML="密码不能为空";
+    			passwordSpan.className="error";
+    			return false;
+    		}
+    		//密码由英文字母、数字、下划线组成,6-16个字符
+    		var reg = /^\w{6,16}$/;
+    		if(reg.test(password)){
+    			passwordSpan.innerHTML="密码可以使用";
+    			passwordSpan.className="ok";
+    			return true;
+    		}else{
+    			passwordSpan.innerHTML="密码校验失败";
+    			passwordSpan.className="error";
+    			return false;
+    		}
+    	}
+    	
+    	
+    	function checkPhone(){
+    		var phone = document.getElementById("phone").value;
+    		var phoneSpan = document.getElementById("phoneSpan");
+    		var reg = /^[1][3578]\d{9}$/;
+    		if(phone.length==0){
+    			phoneSpan.innerHTML="";
+    			return true;
+    		}
+    		if(reg.test(phone)){
+    			phoneSpan.innerHTML="手机号码格式正确";
+    			phoneSpan.className="ok";
+    			return true;
+    		}else{
+    			phoneSpan.innerHTML="手机号码格式错误";
+    			phoneSpan.className="error";
+    			return false;
+    		}
+    		
+    	}
+    	
+    	function checkEmail(){
+    		var email = document.getElementById("email").value;
+    		var emailSpan = document.getElementById("emailSpan");
+    		//前面由英文字母、数字、下划线组成,中间跟@,后面跟\w,以.com或者.com.cn结尾
+    		var reg = /^\w+[@]\w+(\.com)(\.cn)?$/;
+    		if(email.length==0){
+    			emailSpan.innerHTML="";
+    			return true;
+    		}
+    		if(reg.test(email)){
+    			emailSpan.innerHTML="电子邮箱格式正确";
+    			emailSpan.className="ok";
+    			return true;
+    		}else{
+    			emailSpan.innerHTML="电子邮箱格式错误";
+    			emailSpan.className="error";
+    			return false;
+    		}
+    	}
+    	
+    	function checkForm(){
+    		if(checkName()==true && checkPassword()==true && checkPhone()==true && checkEmail()==true){
+    			return true;
+    		}else{
+    			return false;
+    		}
+    	}
+    </script>
+  </head>
+  <body>
+    <form action="success.html" method="post" onsubmit="return checkForm()">
+    	<table>
+    		<tr>
+    			<td>用户名:</td>
+    			<td>
+    				<input type="text" id="username" onblur="checkName()"/>
+    				<span id="nameSpan"></span>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>密码:</td>
+    			<td>
+    				<input type="password" id="password" onblur="checkPassword()"/>
+    				<span id="passwordSpan"></span>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>手机号:</td>
+    			<td>
+    				<input type="text" id="phone" onblur="checkPhone()"/>
+    				<span id="phoneSpan"></span>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>电子邮箱:</td>
+    			<td>
+    				<input type="text" id="email" onblur="checkEmail()" />
+    				<span id="emailSpan"></span>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<input type="submit" value="提交" />
+    			</td>
+    		</tr>
+    	</table>
+    </form>
+  </body>
+</html>

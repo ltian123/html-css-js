@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js02.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function f1(){
+//     		var num = 10.9;
+//     		var num = 10;
+//     		var num = "10abc.abc";
+//     		var num = "10abc10abc";
+    		var num = "abc10";
+    		num = parseInt(num);
+    		alert(num);
+    	}
+    	
+    	function f2(){
+    		var left = "100px";
+//     		left = left + "50px";
+			left = parseInt(left) + 50 + "px";
+    		alert(left);
+    	}
+    	function f3(){
+    		var i = 1/0;
+    		alert(i);
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <input type="button" onclick="f1()" value="测试1"/><br/>
+    <input type="button" onclick="f2()" value="测试2"/><br/>
+    <input type="button" onclick="f3()" value="测试3"/><br/>
+	
+  </body>
+</html>

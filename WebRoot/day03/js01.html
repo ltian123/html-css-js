@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js01.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<script type="text/javascript">
+		function f1(){
+			var num;
+			num = 1;
+			alert(num);
+		}
+		function f2(){
+			var num = 2;
+			alert(num);
+		}
+		function f3(){
+			num = 3;
+			alert(num);
+		}
+		function f4(){
+			var num1 = 1;
+			var num2 = "1";
+			if(num1==num2){
+				alert("true");
+			}else{
+				alert("false");
+			}
+			
+		}
+		function f5(){
+			var num1 = 1;
+			var num2 = "1";
+			if(num1===num2){
+				alert("true");
+			}else{
+				alert("false");
+			}
+			
+		}
+		
+		function f6(){
+			var num = 10;
+// 			alert(typeof num);
+			num = num + "1";
+// 			alert(typeof num);
+			num = num +1;
+			alert(num);
+// 			alert(typeof num);
+			num = 10;
+			alert(typeof num);
+			
+			
+		}
+	
+		function f7(){
+// 			var a = null;
+// 			alert(typeof a);
+			var b;
+			alert(b);
+			alert(typeof b);
+		}
+	</script>
+  </head>
+  
+  <body>
+  <a href="javaScript:;" onclick="f1()">click1</a><br/>
+  <a href="javaScript:;" onclick="f2()">click2</a><br/>
+  <a href="javaScript:;" onclick="f3()">click3</a><br/>
+  <a href="javaScript:;" onclick="f4()">click4</a><br/>
+  <a href="javaScript:;" onclick="f5()">click5</a><br/>
+  <a href="javaScript:;" onclick="f6()">click6</a><br/>
+  <a href="javaScript:;" onclick="f7()">click7</a><br/>
+  </body>
+</html>

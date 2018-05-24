@@ -1,0 +1,11 @@
+p,span,div{
+	color:red;
+}
+
+div span{
+	color:green;
+}
+
+span{
+	color: yellow;
+}

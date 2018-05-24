@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>文档处理</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+    		$("#add").click(function(){
+    			//方式一:
+    			//text可以称之为dom对象、
+    			//实际上并不是纯粹的dom对象
+        		var text = "<li>"+$("#in").val()+"</li>";
+//         		alert(text);
+// 				$("#u").append($(text));
+				//方式二:
+// 				$(text).appendTo($("#u"));
+
+				//方式三:
+// 				console.log($("#u li"));
+				console.log($("#u li:last"));
+				var l = $("#u li:first").clone();
+// 				alert(l.html());
+				l.text($("#in").val());
+				alert(l.html());
+				$("#u").append(l);
+    		});
+    		
+    		$("ul li").click(function(){
+//     			var l = $(this).clone();
+    			var l = $(this).clone(true);
+    			$("#u").append(l);
+    		});
+    	});
+    </script>
+  </head>
+  
+  <body>
+  	<input type="text" id="in" />
+  	<input type="button" value="追加" id="add"><br/>
+    <ul id="u">
+    	<li>aaa</li>
+    	<li>bbb</li>
+    	<li>ccc</li>
+    	<li>ddd</li>
+    </ul>
+  </body>
+</html>

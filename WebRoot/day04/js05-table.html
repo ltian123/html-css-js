@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表格的操作</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	table{
+    		background-color: gray;
+    		width: 50%;
+    	}
+    </style>
+    
+    <script type="text/javascript">
+    	function addEmp(){
+    		//获取员工姓名的节点
+    		var nameNode = document.getElementById("name");
+    		//获取工资节点
+    		var salaryNode = document.getElementById("salary");
+//     		alert(nameNode.value);
+			//获取输入的员工姓名值
+			var name = nameNode.value;
+			//获取输入的工资的值
+			var salary = salaryNode.value;
+			
+			//需要将员工信息添加到表格子节点中,所以需要先获取表格的节点
+			var tableChild = document.getElementById("t");
+			
+			//创建tr
+			var trChild = document.createElement("tr");
+			//td有多个,每一个td对应一列数据,一共有三列
+			var nameTd = document.createElement("td");
+			var salaryTd = document.createElement("td");
+			var deleteTd = document.createElement("td");
+			
+			
+			//创建文本节点
+			//将输入的员工姓名以及工资添加到新建的文本节点中
+			var nameText = document.createTextNode(name);
+			var salaryText = document.createTextNode(salary);
+			
+			//将文本节点添加到创建的td标签中
+			nameTd.appendChild(nameText);
+			salaryTd.appendChild(salaryText);
+			
+			//创建操作那一列中的超链接
+			var aChild = document.createElement("a");
+			var aText = document.createTextNode("删除");
+			
+			aChild.appendChild(aText);
+			
+			aChild.href="javaScript:;";
+			
+			//deleteEmp()表示程序运行到该步骤立即执行deleteEmp函数
+			//deleteEmp表示该函数是一个属性,只有执行onclick事件的时候才会去执行该方法
+// 			deleteEmp();
+// 			aChild.onclick=deleteEmp(this);
+			
+			//可以将点击事件等于一个方法,在这个方法里面调用deleteEmp；
+// 			aChild.onclick=fn;
+			
+			
+			aChild.onclick=function(){
+				deleteEmp(this);
+			};
+			//将超链接放入到操作那一列中
+			deleteTd.appendChild(aChild);
+			
+			//分别将这三列放入到tr中
+			trChild.appendChild(nameTd);
+			trChild.appendChild(salaryTd);
+			trChild.appendChild(deleteTd);
+			tableChild.appendChild(trChild);
+			
+    	}
+    	
+    	function fn(){
+    		deleteEmp(this);
+    	}
+    	function deleteEmp(obj){
+    		if(confirm("是否确认删除")){
+    			var trChild = obj.parentNode.parentNode;
+    			var tableChild = document.getElementById("t");
+    			tableChild.removeChild(trChild);
+    		}
+    	}
+    </script>
+  </head>
+  
+  <body>
+  	<h1>添加员工信息</h1>
+	姓名:<input type="text" id="name"/><br/>
+	工资:<input type="text" id="salary"/><br/>
+	<input type="button" value="添加" onclick="addEmp()"/>
+  	
+  	<hr/>	
+  		
+    <table border="1" id="t">
+    	<tr>
+    		<th>姓名</th>
+    		<th>工资</th>
+    		<th>操作</th>
+    	</tr>
+<!--     	<tr> -->
+<!--     		<td>name</td> -->
+<!--     		<td>salary</td> -->
+<!--     		<td> -->
+<!--     			<a href="javaScript:;" onclick="javaScript:confirm('是否确认删除')">删除</a> -->
+<!--     		</td> -->
+<!--     	</tr> -->
+    </table>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>dom节点处理</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    .selected{
+    	background-color: #ff00ee;
+    }
+    
+    </style>
+    <script type="text/javascript">
+    	function f1(){
+    		var obj = document.getElementById("a1");
+//     		alert(obj);
+//     		alert(obj.innerHTML);
+			obj.className="selected";
+    	}
+    	function findNode(obj){
+    		obj.className="selected";
+    	}
+    </script>
+  </head>
+  
+  <body>
+  	<a href="javaScript:;" onclick="f1()" id="a1">测试1</a>
+  	<a href="javaScript:;" onclick="f1()" id="a2">测试2</a>
+  	
+  	<hr/>
+    <ul id="u1">
+    	<li>aaa</li>
+    	<li>bbb</li>
+    	<li id="i3">ccc</li>
+    	<li>ddd</li>
+    	<li>www</li>
+    </ul>
+    
+    <a href="javaScript:;" onclick="findNode(obj)">当前节点</a><br/>
+    <a href="javaScript:;" onclick="findNode(obj.parentNode)">父节点</a><br/>
+    <a href="javaScript:;" onclick="findNode(obj.previousSibling.previousSibling)">上一个节点</a><br/>
+    <a href="javaScript:;" onclick="findNode(obj.nextSibling.nextSibling)">下一个节点</a><br/>
+    <a href="javaScript:;" onclick="findNode(obj.parentNode.firstChild.nextSibling)">第一个节点</a><br/>
+    <a href="javaScript:;" onclick="findNode(obj.parentNode.lastChild.previousSibling)">最后一个节点</a><br/>
+    
+    <script type="text/javascript">
+    	var obj = document.getElementById("i3");
+    </script>
+  </body>
+  
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>菜单</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+//     	function changeStatus(){
+//     		var u = document.getElementById("u1");
+// 			if(u.style.display=="none"){
+// 				u.style.display="block";
+// 			}else{
+// 				u.style.display="none";
+// 			}
+//     	}
+
+		function changeStatus(a,b){
+			var a = document.getElementById(a);
+			var b = document.getElementById(b);
+			if(a.style.display=="none"){
+				a.style.display="block";
+				b.style.display="none";
+			}else{
+				a.style.display="none";
+			}
+		}
+    </script>
+  </head>
+  
+  <body>
+    <ul>
+    	<li><a href="javaScript:;" onclick="changeStatus('u1','u2')">家用电器</a></li>
+    	<ul id="u1" style="display: none;">
+    		<li>电视</li>
+    		<li>冰箱</li>
+    		<li>空调</li>
+    		<li>洗衣机</li>
+    	</ul>
+    </ul>
+    <ul>
+    	<li><a href="javaScript:;" onclick="changeStatus('u2','u1')">电子设备</a></li>
+    	<ul id="u2" style="display: none;">
+    		<li>手机</li>
+    		<li>电脑</li>
+    		<li>ipad</li>
+    		<li>mp3</li>
+    	</ul>
+    </ul>
+  </body>
+</html>

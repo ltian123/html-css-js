@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>联动下拉菜单</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function changeCity(index){
+    		var arr = new Array();
+    		arr[0] = null;
+    		arr[1] = [new Option("江苏",1),new Option("浙江",2),new Option("安徽",3),new Option("山东",4)];
+    		arr[2] = [new Option("拉斯维加斯",1),new Option("纽约",2),new Option("德克萨斯",3)];
+    		var s2 = document.getElementById("s2");
+    		s2.options.length=1;
+    		for(var i = 0; i < arr[index].length; i++){
+    			s2.options[i+1]=arr[index][i];
+    		}
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <select onchange="changeCity(this.selectedIndex)">
+    	<option>--国家--</option>
+    	<option>中国</option>
+    	<option>美国</option>
+    </select>
+    <!-- 
+    	当选择中国的时候,省份的下拉列中出现江苏、浙江、安徽、山东
+    	选择美国的时候,省份下拉列中出现拉斯维加斯、纽约、德克萨斯
+     -->
+    <select id="s2">
+    	<option>--省份--</option>
+    </select>
+  </body>
+</html>

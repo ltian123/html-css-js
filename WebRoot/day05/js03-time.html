@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>当前时间</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function fn(num){
+    		s = "0"+num;
+    		s = s.substring(s.length-2);
+    		return s;
+    	}
+    	
+    	function nowDate(){
+    		var date = new Date();
+//     		alert(date.getFullYear()+"-"+fn(date.getMonth()+1)+"-"+fn(date.getDate())+" "+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+			var s = document.getElementById("s");
+			s.innerHTML=(date.getFullYear()+"-"+fn(date.getMonth()+1)+"-"+fn(date.getDate())+" "+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+// 			document.write(date.getFullYear()+"-"+fn(date.getMonth()+1)+"-"+fn(date.getDate())+" "+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+    	}
+    	
+    	function loadTime(){
+    		setInterval(nowDate, 100);
+//     		setInterval(function(){
+//     			var date = new Date();
+//     			var s = document.getElementById("s");
+//     			s.innerHTML=(date.getFullYear()+"-"+fn(date.getMonth()+1)+"-"+fn(date.getDate())+" "+fn(date.getHours())+":"+fn(date.getMinutes())+":"+fn(date.getSeconds()));
+//     		}, 100);
+    		
+    	}
+    </script>
+  </head>
+  <body onload="loadTime()">
+    <span id="s"></span>
+  </body>
+</html>

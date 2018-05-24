@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js.html</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript">
+    	function f1(){
+    		alert("Hello JavaScript");
+    	}
+    	
+    	function f2(){
+    		alert("用户名可用");
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <input type="button" value="弹出" onclick="javaScript:alert('Hello JavaScript')"><br/>
+    用户名:<input type="text" onblur="javaScript:alert('用户名可用');">
+    
+    <hr/>
+    
+    <input type="button" value="弹出" onclick="f1()"><br/>
+    用户名:<input type="text" onblur="f2()">
+    <hr/>
+    
+    <input type="button" value="弹出" onclick="f3()"><br/>
+    用户名:<input type="text" onblur="f4()">
+  </body>
+</html>

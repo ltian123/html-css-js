@@ -1,0 +1,57 @@
+window
+	open方法
+		打开一个新的窗口
+	
+	计时:	
+		setTimeout(fn,s)
+			在指定的毫秒数s后执行指定函数fn
+			
+		setInterval(fn,s)
+			每隔s毫秒后执行一次函数fn
+		
+		clearTimeout(s)
+			取消s这个setTimeout设置的事件
+			
+		clearInterval(s)
+			取消s这个setInterval设置的事件
+		
+		
+	document属性
+		属性:
+			forms属性		返回所有的表单
+		
+		方法:
+			write	往文档中写数据
+	
+	
+	location属性
+		表示当前浏览器的地址栏
+	
+	opener
+		获取打开当前窗口的窗口
+		
+	parent属性
+		返回当前窗口的父窗口
+	
+	下拉列
+		select(js Select对象)
+			options属性
+				返回的是下拉列中所有选项的数组
+			selectedIndex
+				返回下拉列中被选中项的索引号
+				
+		option(Option对象)	
+			text:返回选项中的纯文本值
+			value:返回的是送往服务器的值,实际上就是option标签中的value属性的值
+			
+onchange事件:用户改变域中的内容的时候触发对应的事件
+				
+日期联动菜单
+
+年	月	日
+			
+			
+
+				
+	
+		

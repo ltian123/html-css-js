@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>创建</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function fn(){
+//     		创建标签
+    		var obj = document.createElement("div");
+//     		创建文本
+    		var text = document.createTextNode("Hello Dom");
+    		
+//     		将文本放入到标签中
+    		obj.appendChild(text);
+    		
+    		var a = document.getElementById("a");
+    		
+//     		将div放入到a标签中
+    		a.appendChild(obj);
+    		
+    		var body = document.getElementById("b");
+    		
+    		//将div放入到body子节点的末尾
+//     		body.appendChild(obj);
+    		
+    		//将文本放入到a标签之间
+//     		body.insertBefore(obj, a);
+    		
+    		//将div替换原来的a标签
+//     		body.replaceChild(obj, a);
+    		
+//     		a.innerHTML=a.innerHTML+"<div>Hello DOM</div>";
+    	}
+    </script>
+  </head>
+  <body id="b">
+    <a href="javaScript:;" id="a" onclick="fn()">click</a>
+    
+<!--     <div>Hello DOM</div> -->
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>自定义效果</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <style type="text/css">
+    	img{
+    		width:300px;
+    		height: 200px;
+    		background-color: pink;
+    		position: relative;
+    	}
+    </style>
+    <script type="text/javascript">
+    	$(function(){
+//     		$("#move").click(function(){
+//     			$("div").animate({"left":"900px"},3000)
+//     					.animate({"left":"900px","top":"400px"},1500)
+//     					.animate({"left":"0px","top":"400px"},3000)
+//     					.animate({"left":"0px","top":"0px"},1500);
+    					
+//     		});
+    		$("#move").click(function(){
+    			$("img").animate({"left":"900px"},1000)
+    					.animate({"left":"450px","top":"400px"},800)
+    					.animate({"left":"0px","top":"0px"},800);
+    			setTimeout($("#move").click(), 2000);	
+    		});
+    	});
+    </script>
+  </head>
+  <body>
+  	<img alt="图片加载失败" src="../images/ad-02.jpg" id="move">
+<!--   	<div id="move"></div> -->
+<!--   	<input type="button" id="move" value="移动"> -->
+  </body>
+</html>

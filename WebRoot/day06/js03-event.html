@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>js事件</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style type="text/css">
+    	*{
+    		margin: 0;
+    		padding: 0;
+    	}
+    </style>
+    <script type="text/javascript">
+    	function f1(){
+    		console.log("这是一个打印在浏览器控制台的数据的事件");
+    	}
+    	
+    	function f2(){
+    		alert("这是在调用f2...");
+    	}
+    	
+    	function f3(event){
+    		alert("鼠标距离左边:"+event.clientX);
+    		alert("鼠标距离上边:"+event.clientY);
+    	}
+    	
+    </script>
+  </head>
+  <body>
+    <a href="javaScript:;" onclick="f1()">click</a><br/>
+    
+    <a id = "a2" href="javaScript:;">click2</a><br/>
+    
+    <a href="javaScript:;" onclick="f3(event)">click3</a><br/>
+    
+    <div style="width: 800px;height:300px; background-color: pink;" onclick="f3(event)">
+    
+    </div>
+  </body>
+  <script type="text/javascript">
+//   	document.getElementById("a2").onclick=function(){
+//   		f2();
+//   	}
+  	document.getElementById("a2").onclick=f2;
+  </script>
+</html>

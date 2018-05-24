@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery选择器</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript">
+    	$(function(){
+//     		alert($("#p1"));
+//			id选择器
+//     		console.log($("#p1"));
+//			element选择器
+//     		console.log($("p"));
+//			class选择器
+// 			console.log($(".a1"));
+// 			*:找到整个html中的所有的元素
+// 			console.log($("*"));
+// 			选择器1,选择器2:找到选择器1和选择器2
+// 			console.log($("#p1,.a1"));
+// 			选择器1 选择器2:找到选择器1下面的所有的子孙后代元素,即所有的子标签,包括子标签中的子标签
+// 			console.log($("div p"));
+// 			console.log($("form input"));
+// 			选择器1 > 选择器2:找到选择器1下面的选择器2,只匹配子元素,不关系子元素的后代
+// 			console.log($("form > input"));
+// 			选择器1 + 选择器2:找到紧跟在选择器1后面的选择器2,若选择器1后面是选择器2,则找到,若不是,则跳过该选择器1,找到下一个匹配的元素
+// 			console.log($("label + input"));
+// 			选择器1 ~ 选择器2:找到所有在选择器1后面匹配选择器2的所有元素,只找同一层的元素
+// 			console.log($("label ~ input"));
+// 			选择器:first	找到符合选择器的元素中的第一个元素
+// 			console.log($("p:first"));
+// 			选择器:last	找到符合选择器的元素中的最后一个元素			
+// 			console.log($("p:last"));
+    	});
+    </script>
+  </head>
+  <body>
+    <div>
+    	<p id="p1">第一段</p>
+    	<p>第二段</p>
+    	<p>第三段</p>
+    	<p class="a1">第四段</p>
+    </div>
+    	<p class="a1">aaa</p>
+    	<p class="a1">bbb</p>
+    	<p>ccc</p>
+    	<p>ddd</p>
+    
+    <form action="">
+    	<input type="text" name="name"/>
+    	<label>bbb</label>
+    	<span></span>
+    	<input type="text" name="name"/>
+    	<input type="text" name="name"/>
+    	<input type="text" name="name"/>
+    	<div>
+<!--     		<label>bbb</label> -->
+    		<span></span>
+    		<input type="text" name="bbb"/>
+    	</div>
+    </form>
+    
+  </body>
+</html>

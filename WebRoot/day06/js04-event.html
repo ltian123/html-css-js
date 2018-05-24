@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>事件冒泡</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <script type="text/javascript">
+    	function clickA(e){
+    		document.getElementById("d").style.display="none";
+    		e.cancelBubble=true;
+    	}
+    	
+    	function clickDiv(){
+    		location.href="js03-event.html";
+    	}
+    </script>
+  </head>
+  
+  <body>
+    <div id="d" style="width: 100px;height: 100px;background-color: #4477ff;" onclick="clickDiv()">
+    	<a href="javaScript:;" onclick="clickA(event)">click</a>
+    </div>
+  </body>
+</html>

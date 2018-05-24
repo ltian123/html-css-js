@@ -1,0 +1,128 @@
+js日期
+	Date
+		
+	9:10:4	---->	09:10:04
+	
+	
+	
+	1		---->		0001
+	12		---->		0012
+	123		---->		0123
+	1234	---->		1234
+	
+	
+	1	--->	   0001
+	12	--->	  00012
+	123	--->	 000123
+	1234--->	0001234
+	
+	
+DOM
+	document object model
+	文档对象模型
+	由W3C定义的
+	将一个结构化的文档(html等)转换成一棵树
+	通过对这棵树的操作来实现对文档的操作
+	dom模型提供了对节点的CURD的API
+	程序可以通过调用api来实现对节点的处理
+	
+	浏览器读取html文档之后
+	会按照w3c定义的dom模型
+	将其转换成一个内存中的树
+	按照这棵树的数据来显示html
+	
+	W3C dom模型结构
+	
+	Document文档
+		HTMLDocument
+			HTMLBodyElement
+			
+	Element	元素、标签
+		HTMLElement
+		
+	Attribute	属性
+	
+	Node	节点
+	
+	
+	dom操作
+		查询:
+			根据标签的id属性查询
+				document.getElementById("id")
+				返回拥有指定id的第一个对象的引用
+				
+				obj.innerHTML:返回节点之间的文本内容
+				node.parentNode:父节点
+				node.previousSibling:上一个节点
+				node.nextSibling:下一个节点
+				node.parentNode.firstChild:第一个节点
+				node.parentNode.lastChild:最后一个节点
+				
+				浏览器兼容
+					ff:会将空白也当做节点来处理
+					
+					ie:忽略空白
+				
+			
+			根据标签的name属性查询
+				document.getElementsByName("name")
+				返回拥有指定name的对象的集合
+			
+			根据标签名查询
+				document.getElementsByTagName("tagName")
+				返回所有指定标签的对象的集合
+			
+			
+			根据class属性来查询:已过期
+			
+			
+		创建
+			创建标签:
+				document.createElement("tagName")
+			
+			创建文本:
+				document.createTextNode("text")
+		
+		添加
+			将一个childNode节点添加到node子节点内容的末尾
+			node.appendChild(childNode)
+			
+			
+			将newNode插入到refNode之间
+			node.insertBefore(newNode,refNode)
+			
+			
+			以newNode替换原来的refNode
+			node.replaceChild(newNode,refNode)
+		
+				
+		删除
+			删除指定的节点
+				node.removeChild(refNode)
+			删除所有节点
+				node.remove()
+改变样式
+	node.className = class选择器的名字
+	node.style.样式属性=值
+	
+	禁止浏览器的一些默认行为
+	表单:
+		onsubmit = "return false"
+		
+	超链接:
+		<a onclick="return false"></a>
+	
+	
+	https://192.168.17.8/svn/homework/0920
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	

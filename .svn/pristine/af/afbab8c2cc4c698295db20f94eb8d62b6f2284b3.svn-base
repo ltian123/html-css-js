@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>简单表单</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+  	<marquee><font size="14" color="pink">用户注册</font></marquee>
+    <form action="table01.html" method="post">
+    	<table>
+    		<tr>
+    			<td>
+    				<label>用户名:</label>
+    			</td>
+    			<td><input type="text"/></td>
+    		</tr>
+    		<tr>
+    			<td>密码:</td>
+    			<td><input type="password"/></td>
+    		</tr>
+    		<tr>
+    			<td>出生日期:</td>
+    			<td>
+    				<select>
+    					<option>--请选择--</option>
+    					<option>2010年</option>
+    					<option>2011年</option>
+    					<option>2012年</option>
+    					<option>2013年</option>
+    					<option>2014年</option>
+    					<option>2015年</option>
+    					<option>2016年</option>
+    				</select>
+    				<select>
+    					<option>--请选择--</option>
+    					<option>1月</option>
+    					<option>2月</option>
+    					<option>3月</option>
+    					<option>4月</option>
+    					<option>5月</option>
+    					<option>6月</option>
+    					<option>7月</option>
+    					<option>8月</option>
+    					<option>9月</option>
+    					<option>10月</option>
+    					<option>11月</option>
+    					<option>12月</option>
+    				</select>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>性别:</td>
+    			<td>
+    				<input type="radio" name="gender" value="男" checked="checked"/>男
+    				<input type="radio" value="女" name="gender" checked/>女
+    			</td>
+    		</tr>
+    		<tr>
+    			<td>兴趣爱好:</td>
+    			<td>
+    				<input type="checkbox" name="hobbies" checked />吃饭
+    				<input type="checkbox" name="hobbies"/>睡觉
+    				<input type="checkbox" name="hobbies"/>学java
+    			</td>
+    		</tr>
+    		
+    		<tr>
+    			<td>用户头像:</td>
+    			<td>
+    				<input type="file" />
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<textarea rows="10" cols="50">
+    					请阅读该协议请阅读该协议请阅读该协议请阅读该协议请阅读该协议请阅读该协议请阅读该协议
+    				</textarea>
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<input type="checkbox" name="aaa"/>是否同意该协议
+    			</td>
+    		</tr>
+    		<tr>
+    			<td colspan="2">
+    				<input type="button" value="取消">
+    				<input type="submit" value="提交">
+    				<input type="reset" value="重置">
+    				<input type="hidden" value="10" name="hid">
+    			</td>
+    		</tr>
+    	</table>
+    </form>
+  </body>
+</html>
